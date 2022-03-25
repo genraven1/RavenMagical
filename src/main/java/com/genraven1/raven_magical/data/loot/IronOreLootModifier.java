@@ -30,7 +30,9 @@ public class IronOreLootModifier extends LootModifier {
     @NotNull
     @Override
     protected List<ItemStack> doApply(final List<ItemStack> generatedLoot, final LootContext context) {
-        generatedLoot.add(new ItemStack(item, 1));
+        if (context.getRandom().nextFloat() > 0.5) {
+            generatedLoot.add(new ItemStack(item, 1));
+        }
         return generatedLoot;
     }
 
