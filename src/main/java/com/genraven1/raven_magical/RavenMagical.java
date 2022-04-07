@@ -1,5 +1,6 @@
 package com.genraven1.raven_magical;
 
+import com.genraven1.raven_magical.block.ModBlocks;
 import com.genraven1.raven_magical.data.loot.ModLootModifiers;
 import com.genraven1.raven_magical.item.ModItems;
 import com.mojang.logging.LogUtils;
@@ -23,6 +24,7 @@ public class RavenMagical
         eventBus.addListener(this::setup);
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
         ModLootModifiers.register(eventBus);
         MinecraftForge.EVENT_BUS.register(this);
     }
