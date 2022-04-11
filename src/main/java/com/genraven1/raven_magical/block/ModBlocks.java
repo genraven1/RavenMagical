@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -29,5 +30,9 @@ public class ModBlocks {
 
     public static void register(final IEventBus eventBus) {
         BLOCKS.register(eventBus);
+    }
+
+    public static List<RavenMushroomBlock> getMushroomBlocks() {
+        return List.of(BLACK_MUSHROOM.get());
     }
 }

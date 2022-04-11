@@ -1,7 +1,10 @@
 package com.genraven1.raven_magical.data;
 
 import com.genraven1.raven_magical.RavenMagical;
+import com.genraven1.raven_magical.block.ModBlocks;
+import com.genraven1.raven_magical.block.RavenMushroomBlock;
 import com.genraven1.raven_magical.item.ModItems;
+import com.genraven1.raven_magical.item.RavenItem;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -14,9 +17,21 @@ public class RavenLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addItemTranslations();
+        addBlockTranslations();
     }
 
     private void addItemTranslations() {
-        ModItems.getGeneratedItems().forEach(item -> add(item.getLanguageCodeName(), item.getEnglishName()));
+        for (RavenItem item : ModItems.getGeneratedItems()) {
+            System.out.println(item.getEnglishName() + item.getLanguageCodeName());
+            add(item.getLanguageCodeName(), item.getEnglishName());
+        }
+    }
+
+    private void addBlockTranslations() {
+        for (RavenMushroomBlock ravenMushroomBlock : ModBlocks.getMushroomBlocks()) {
+            System.out.println(ravenMushroomBlock.getEnglishName() + ravenMushroomBlock.getLanguageCodeName());
+            add(ravenMushroomBlock.getLanguageCodeName(), ravenMushroomBlock.getEnglishName());
+        }
+
     }
 }

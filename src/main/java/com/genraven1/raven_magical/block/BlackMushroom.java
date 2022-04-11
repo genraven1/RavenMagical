@@ -1,27 +1,32 @@
 package com.genraven1.raven_magical.block;
 
-import net.minecraft.world.item.DyeColor;
+import com.genraven1.raven_magical.util.RavenUtils;
 
 public class BlackMushroom extends RavenMushroomBlock {
 
     public static final String CODE_NAME = "black_mushroom";
 
     public BlackMushroom() {
-        super(DyeColor.BLACK);
+        super();
     }
 
     @Override
     public String getCodeName() {
-        return null;
+        return CODE_NAME;
     }
 
     @Override
     public String getEnglishName() {
-        return null;
+        return "Black Mushroom";
     }
 
     @Override
     public String getLanguageCodeName() {
-        return null;
+        return RavenUtils.LANG_BLOCK + CODE_NAME;
+    }
+
+    @Override
+    public String getCodePath() {
+        return RavenUtils.BLOCK_PATH + CODE_NAME;
     }
 }
