@@ -18,4 +18,6 @@ public abstract class RavenItem extends Item {
     public abstract String getEnglishName();
 
     public abstract String getLanguageCodeName();
+
+    public abstract String getCodePath();
 }

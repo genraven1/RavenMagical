@@ -22,4 +22,9 @@ public class Citrine extends RavenItem {
     public String getLanguageCodeName() {
         return RavenUtils.LANG_ITEM + CODE_NAME;
     }
+
+    @Override
+    public String getCodePath() {
+        return RavenUtils.ITEM_PATH + CODE_NAME;
+    }
 }

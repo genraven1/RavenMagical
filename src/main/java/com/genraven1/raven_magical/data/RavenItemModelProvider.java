@@ -1,8 +1,8 @@
 package com.genraven1.raven_magical.data;
 
 import com.genraven1.raven_magical.RavenMagical;
+import com.genraven1.raven_magical.block.ModBlocks;
 import com.genraven1.raven_magical.item.ModItems;
-import com.genraven1.raven_magical.util.RavenUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -26,19 +26,28 @@ public class RavenItemModelProvider extends ItemModelProvider {
         registerItemModels();
     }
 
-    private ItemModelBuilder generatedBuilder(final String name) {
-        return withExistingParent(name, generatedResourceLocation).texture("layer0", RavenUtils.ITEM_PATH + name);
+    private ItemModelBuilder generatedItemBuilder(final String name, final String path) {
+        return withExistingParent(name, generatedResourceLocation).texture("layer0", path);
     }
 
-    private ItemModelBuilder handheldBuilder(final String name) {
-        return withExistingParent(name, handheldResourceLocation).texture("layer0", RavenUtils.ITEM_PATH + name);
+    private ItemModelBuilder handheldBuilder(final String name, final String path) {
+        return withExistingParent(name, handheldResourceLocation).texture("layer0", path);
+    }
+
+    private void registerItemBlockModels(final String name, final String path) {
+        generatedItemBuilder(name, path);
     }
 
     private void registerItemModels() {
         registerGeneratedItemModels();
+        registerRavenMushroomBlock();
     }
 
     private void registerGeneratedItemModels() {
-        ModItems.getGeneratedItems().forEach(item -> generatedBuilder(item.getCodeName()));
+        ModItems.getGeneratedItems().forEach(item -> generatedItemBuilder(item.getCodeName(), item.getCodePath()));
+    }
+
+    private void registerRavenMushroomBlock() {
+        ModBlocks.getMushroomBlocks().forEach(ravenMushroomBlock -> registerItemBlockModels(ravenMushroomBlock.getCodeName(), ravenMushroomBlock.getCodePath()));
     }
 }
