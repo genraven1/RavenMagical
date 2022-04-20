@@ -6,6 +6,7 @@ import com.genraven1.raven_magical.item.RavenItem;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -58,10 +59,8 @@ public class IronOreLootModifier extends LootModifier {
         @Override
         public IronOreLootModifier read(final ResourceLocation location, final JsonObject object, final LootItemCondition[] lootConditions) {
             final List<RavenItem> items = new ArrayList<>();
-            final List<String> itemNames = new Gson().fromJson(GEMSTONE, new TypeToken<ArrayList<String>>() {}.getType());
-            for (final String itemName : itemNames) {
-                System.out.println(itemName);
-                items.add((RavenItem) ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)));
+            for (JsonElement name : object.getAsJsonArray(GEMSTONE)) {
+                items.add((RavenItem) ForgeRegistries.ITEMS.getValue(new ResourceLocation(name.getAsString())));
             }
             return new IronOreLootModifier(items);
         }

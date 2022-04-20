@@ -34,4 +34,8 @@ public class RavenMagical
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
+
+    public static Logger getLOGGER() {
+        return LOGGER;
+    }
 }
