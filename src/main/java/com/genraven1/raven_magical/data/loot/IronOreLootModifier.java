@@ -1,10 +1,7 @@
 package com.genraven1.raven_magical.data.loot;
 
-import com.genraven1.raven_magical.RavenMagical;
 import com.genraven1.raven_magical.item.ModItems;
 import com.genraven1.raven_magical.item.RavenItem;
-import com.google.common.reflect.TypeToken;
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

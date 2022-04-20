@@ -4,7 +4,7 @@ import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class RawRuby extends RavenItem {
+public class RawRuby extends RawGemstoneItem {
 
     public static final String CODE_NAME = "raw_ruby";
 

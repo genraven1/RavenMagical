@@ -16,8 +16,9 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RavenMagical.MOD_ID);
 
     public static final RegistryObject<RavenItem> CITRINE = ITEMS.register(Citrine.CODE_NAME, Citrine::new);
-    public static final RegistryObject<RavenItem> RAW_CITRINE = ITEMS.register(RawCitrine.CODE_NAME, RawCitrine::new);
-    public static final RegistryObject<RavenItem> RAW_RUBY = ITEMS.register(RawRuby.CODE_NAME, RawRuby::new);
+    public static final RegistryObject<RawGemstoneItem> RAW_CITRINE = ITEMS.register(RawCitrine.CODE_NAME, RawCitrine::new);
+    public static final RegistryObject<RawGemstoneItem> RAW_RUBY = ITEMS.register(RawRuby.CODE_NAME, RawRuby::new);
+    public static final RegistryObject<RavenItem> RUBY = ITEMS.register(Ruby.CODE_NAME, Ruby::new);
 
     public static void register(final IEventBus eventBus) {
         ITEMS.register(eventBus);
@@ -29,7 +30,7 @@ public class ModItems {
     }
 
     public static List<RavenItem> getGeneratedItems() {
-        return getItems(getRawGemstones(), CITRINE.stream().toList());
+        return getItems(getRawGemstones(), CITRINE.stream().toList(), RUBY.stream().toList());
     }
 
     public static List<RavenItem> getRawGemstones() {
