@@ -22,14 +22,12 @@ public class RavenLanguageProvider extends LanguageProvider {
 
     private void addItemTranslations() {
         for (RavenItem item : ModItems.getGeneratedItems()) {
-            System.out.println(item.getEnglishName() + item.getLanguageCodeName());
             add(item.getLanguageCodeName(), item.getEnglishName());
         }
     }
 
     private void addBlockTranslations() {
         for (RavenMushroomBlock ravenMushroomBlock : ModBlocks.getMushroomBlocks()) {
-            System.out.println(ravenMushroomBlock.getEnglishName() + ravenMushroomBlock.getLanguageCodeName());
             add(ravenMushroomBlock.getLanguageCodeName(), ravenMushroomBlock.getEnglishName());
         }
 

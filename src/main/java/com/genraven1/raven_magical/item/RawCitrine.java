@@ -4,7 +4,7 @@ import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class RawCitrine extends RavenItem {
+public class RawCitrine extends RawGemstoneItem {
 
     public static final String CODE_NAME = "raw_citrine";
 

@@ -15,6 +15,6 @@ public class RavenGlobalLootModifierProvider extends GlobalLootModifierProvider 
 
     @Override
     protected void start() {
-        add(IronOreLootModifier.NAME, ModLootModifiers.IRON_ORE.get(), new IronOreLootModifier(ModItems.RAW_CITRINE.get()));
+        add(IronOreLootModifier.NAME, ModLootModifiers.IRON_ORE.get(), new IronOreLootModifier(ModItems.getRawGemstones()));
     }
 }
