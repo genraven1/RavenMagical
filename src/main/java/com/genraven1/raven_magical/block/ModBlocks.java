@@ -4,7 +4,6 @@ import com.genraven1.raven_magical.RavenMagical;
 import com.genraven1.raven_magical.item.ModItems;
 import com.genraven1.raven_magical.item.RavenBlockItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,7 +20,7 @@ public class ModBlocks {
 
     // Basic Mushroom Pots
     public static final RegistryObject<BaseMushroomPot> BASIC_MUSHROOM_POT = registerBlock(BasicMushroomPot.CODE_NAME, BasicMushroomPot::new);
-    public static final RegistryObject<BaseMushroomPot> POTTED_BLACK_MUSHROOM = registerBlock(BasicMushroomPot.CODE_NAME, () -> new BasicMushroomPot(BLACK_MUSHROOM));
+    public static final RegistryObject<BaseMushroomPot> POTTED_BLACK_MUSHROOM = registerBlock(BlackMushroom.POTTED_CODE_NAME, () -> new BasicMushroomPot(BLACK_MUSHROOM));
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -39,5 +38,9 @@ public class ModBlocks {
 
     public static List<RavenMushroomBlock> getMushroomBlocks() {
         return List.of(BLACK_MUSHROOM.get());
+    }
+
+    public static List<BaseMushroomPot> getMushroomPotBlocks() {
+        return List.of(BASIC_MUSHROOM_POT.get(), POTTED_BLACK_MUSHROOM.get());
     }
 }
