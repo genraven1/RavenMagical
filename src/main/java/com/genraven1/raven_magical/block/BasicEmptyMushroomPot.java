@@ -1,13 +1,15 @@
 package com.genraven1.raven_magical.block;
 
 import com.genraven1.raven_magical.util.RavenUtils;
-import lombok.NoArgsConstructor;
+import net.minecraft.world.level.block.Blocks;
 
-@NoArgsConstructor
-public class BlackMushroom extends RavenMushroomBlock {
+public class BasicEmptyMushroomPot extends BasicMushroomPot {
 
-    public static final String CODE_NAME = "black_mushroom";
-    public static final String POTTED_CODE_NAME = "potted_" + CODE_NAME;
+    public static final String CODE_NAME = "basic_empty_mushroom_pot";
+
+    public BasicEmptyMushroomPot() {
+        super(() -> Blocks.AIR);
+    }
 
     @Override
     public String getCodeName() {
@@ -16,7 +18,7 @@ public class BlackMushroom extends RavenMushroomBlock {
 
     @Override
     public String getEnglishName() {
-        return "Black Mushroom";
+        return "Basic Empty Mushroom Pot";
     }
 
     @Override

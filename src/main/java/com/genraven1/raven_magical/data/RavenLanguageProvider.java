@@ -34,5 +34,8 @@ public class RavenLanguageProvider extends LanguageProvider {
         for (BaseMushroomPot mushroomPot : ModBlocks.getMushroomPotBlocks()) {
             add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName());
         }
+        for (BaseMushroomPot mushroomPot : ModBlocks.getMushroomPottedBlocks()) {
+            add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName());
+        }
     }
 }

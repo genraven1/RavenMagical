@@ -1,13 +1,14 @@
 package com.genraven1.raven_magical.block;
 
 import com.genraven1.raven_magical.util.RavenUtils;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-public class BlackMushroom extends RavenMushroomBlock {
+public class BasicBlackMushroomPot extends BasicMushroomPot {
 
-    public static final String CODE_NAME = "black_mushroom";
-    public static final String POTTED_CODE_NAME = "potted_" + CODE_NAME;
+    public static final String CODE_NAME = "basic_black_mushroom_pot";
+
+    public BasicBlackMushroomPot() {
+        super(ModBlocks.BLACK_MUSHROOM);
+    }
 
     @Override
     public String getCodeName() {
@@ -16,7 +17,7 @@ public class BlackMushroom extends RavenMushroomBlock {
 
     @Override
     public String getEnglishName() {
-        return "Black Mushroom";
+        return "Basic Black Mushroom Pot";
     }
 
     @Override
@@ -26,6 +27,6 @@ public class BlackMushroom extends RavenMushroomBlock {
 
     @Override
     public String getCodePath() {
-        return RavenUtils.BLOCK_PATH + CODE_NAME;
+        return RavenUtils.BLOCK_PATH + BlackMushroom.CODE_NAME;
     }
 }
