@@ -6,17 +6,16 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraftforge.common.IPlantable;
 import org.jetbrains.annotations.NotNull;
 
-public class RavenBushBlock extends Block implements IPlantable {
+public abstract class RavenBushBlock extends RavenBlock implements IPlantable {
     public RavenBushBlock() {
-        super(Properties.of(Material.PLANT));
+        super(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH));
     }
 
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {

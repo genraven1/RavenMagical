@@ -1,6 +1,7 @@
 package com.genraven1.raven_magical.data;
 
 import com.genraven1.raven_magical.RavenMagical;
+import com.genraven1.raven_magical.block.BaseMushroomPot;
 import com.genraven1.raven_magical.block.ModBlocks;
 import com.genraven1.raven_magical.block.RavenMushroomBlock;
 import com.genraven1.raven_magical.item.ModItems;
@@ -30,6 +31,11 @@ public class RavenLanguageProvider extends LanguageProvider {
         for (RavenMushroomBlock ravenMushroomBlock : ModBlocks.getMushroomBlocks()) {
             add(ravenMushroomBlock.getLanguageCodeName(), ravenMushroomBlock.getEnglishName());
         }
-
+        for (BaseMushroomPot mushroomPot : ModBlocks.getMushroomPotBlocks()) {
+            add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName());
+        }
+        for (BaseMushroomPot mushroomPot : ModBlocks.getMushroomPottedBlocks()) {
+            add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName());
+        }
     }
 }
