@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 public class BlackMushroom extends RavenMushroomBlock {
 
     public static final String CODE_NAME = "black_mushroom";
-    public static final String POTTED_CODE_NAME = "potted_" + CODE_NAME;
 
     @Override
     public String getCodeName() {
