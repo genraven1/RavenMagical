@@ -4,7 +4,6 @@ import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
