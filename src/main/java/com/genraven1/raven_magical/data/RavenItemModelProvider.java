@@ -3,6 +3,7 @@ package com.genraven1.raven_magical.data;
 import com.genraven1.raven_magical.RavenMagical;
 import com.genraven1.raven_magical.block.ModBlocks;
 import com.genraven1.raven_magical.item.ModItems;
+import com.genraven1.raven_magical.util.RavenUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -15,8 +16,8 @@ public class RavenItemModelProvider extends ItemModelProvider {
         super(dataGenerator, RavenMagical.MOD_ID, existingFileHelper);
     }
 
-    private final ResourceLocation generatedResourceLocation = new ResourceLocation("minecraft", "item/generated");
-    private final ResourceLocation handheldResourceLocation = new ResourceLocation("minecraft", "item/handheld");
+    private final ResourceLocation generatedResourceLocation = new ResourceLocation("item/generated");
+    private final ResourceLocation handheldResourceLocation = new ResourceLocation("item/handheld");
 
     private final ModelFile generatedModelFile = getExistingFile(generatedResourceLocation);
     private final ModelFile handheldModelFile = getExistingFile(handheldResourceLocation);
@@ -30,7 +31,7 @@ public class RavenItemModelProvider extends ItemModelProvider {
         return withExistingParent(name, generatedResourceLocation).texture("layer0", path);
     }
 
-    private ItemModelBuilder handheldBuilder(final String name, final String path) {
+    private ItemModelBuilder handheldItemBuilder(final String name, final String path) {
         return withExistingParent(name, handheldResourceLocation).texture("layer0", path);
     }
 
@@ -39,16 +40,16 @@ public class RavenItemModelProvider extends ItemModelProvider {
     }
 
     private void registerItemModels() {
-        registerGeneratedItemModels();
-        registerRavenMushroomBlock();
+        generateItemModels();
+        generateBlockModels();
     }
 
-    private void registerGeneratedItemModels() {
-        ModItems.getRawGemstones().forEach(item -> generatedItemBuilder(item.getCodeName(), item.getCodePath()));
-        ModItems.getGemstones().forEach(item -> generatedItemBuilder(item.getCodeName(), item.getCodePath()));
+    private void generateItemModels() {
+        ModItems.getRawGemstones().forEach(item -> handheldItemBuilder(item.getCodeName(), item.getCodePath()));
+        ModItems.getGemstones().forEach(item -> handheldItemBuilder(item.getCodeName(), item.getCodePath()));
     }
 
-    private void registerRavenMushroomBlock() {
+    private void generateBlockModels() {
         ModBlocks.getMushroomBlocks().forEach(ravenMushroomBlock -> registerItemBlockModels(ravenMushroomBlock.getCodeName(), ravenMushroomBlock.getCodePath()));
     }
 }

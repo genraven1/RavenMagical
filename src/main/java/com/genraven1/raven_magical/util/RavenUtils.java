@@ -15,12 +15,12 @@ public class RavenUtils {
     public static final String LANG_ITEM =  "item." + RavenMagical.MOD_ID + ".";
     public static final String BLOCK_PATH = "block/";
     public static final String ITEM_PATH = "item/";
-
     public static final String HAS_PREFIX = "has_";
-
     public static final String SMITHING_SUFFIX = "_smithing";
 
-    public static final ResourceLocation MOD_RESOURCE_LOCATION = new ResourceLocation(RavenMagical.MOD_ID);
+    public static ResourceLocation getRavenMagicalResourceLocation(final String name) {
+        return new ResourceLocation(RavenMagical.MOD_ID, name);
+    }
 
     private static InventoryChangeTrigger.TriggerInstance inventoryTrigger(final ItemPredicate... pPredicates) {
         return new InventoryChangeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, pPredicates);

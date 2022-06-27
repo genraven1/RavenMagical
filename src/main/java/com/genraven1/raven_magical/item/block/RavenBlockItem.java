@@ -1,4 +1,4 @@
-package com.genraven1.raven_magical.item;
+package com.genraven1.raven_magical.item.block;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
