@@ -15,7 +15,6 @@ public class RavenRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(final @NotNull Consumer<FinishedRecipe> recipeConsumer) {
-        super.buildCraftingRecipes(recipeConsumer);
         buildItemRecipes(recipeConsumer);
     }
 
