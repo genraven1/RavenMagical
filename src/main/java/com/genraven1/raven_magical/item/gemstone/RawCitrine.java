@@ -1,5 +1,6 @@
-package com.genraven1.raven_magical.item;
+package com.genraven1.raven_magical.item.gemstone;
 
+import com.genraven1.raven_magical.item.ModItems;
 import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -10,9 +11,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Consumer;
 
 @NoArgsConstructor
-public class RawRuby extends RawGemstoneItem {
+public class RawCitrine extends RawGemstoneItem {
 
-    public static final String CODE_NAME = "raw_ruby";
+    public static final String CODE_NAME = "raw_citrine";
 
     @Override
     public String getCodeName() {
@@ -21,7 +22,7 @@ public class RawRuby extends RawGemstoneItem {
 
     @Override
     public String getEnglishName() {
-        return "Raw Ruby";
+        return "Raw Citrine";
     }
 
     @Override
@@ -34,10 +35,10 @@ public class RawRuby extends RawGemstoneItem {
         return RavenUtils.ITEM_PATH + CODE_NAME;
     }
 
-    @Override
     public void getRefinementRecipe(final Consumer<FinishedRecipe> finishedRecipe) {
-        UpgradeRecipeBuilder.smithing(Ingredient.of(ModItems.RAW_RUBY.get()), Ingredient.of(Items.NETHERITE_INGOT), ModItems.RUBY.get())
-                .unlocks(RavenUtils.HAS_PREFIX + CODE_NAME, RavenUtils.has(ModItems.RAW_RUBY.get()))
+        UpgradeRecipeBuilder.smithing(Ingredient.of(ModItems.RAW_CITRINE.get()), Ingredient.of(Items.NETHERITE_INGOT), ModItems.CITRINE.get())
+                .unlocks(RavenUtils.HAS_PREFIX + CODE_NAME, RavenUtils.has(ModItems.RAW_CITRINE.get()))
                 .save(finishedRecipe,  CODE_NAME + RavenUtils.SMITHING_SUFFIX);
     }
+
 }

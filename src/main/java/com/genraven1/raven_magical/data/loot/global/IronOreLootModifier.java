@@ -2,7 +2,7 @@ package com.genraven1.raven_magical.data.loot.global;
 
 import com.genraven1.raven_magical.item.ModItems;
 import com.genraven1.raven_magical.item.RavenItem;
-import com.genraven1.raven_magical.item.RawGemstoneItem;
+import com.genraven1.raven_magical.item.gemstone.RawGemstoneItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

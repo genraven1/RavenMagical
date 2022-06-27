@@ -1,6 +1,7 @@
 package com.genraven1.raven_magical.item;
 
 import com.genraven1.raven_magical.RavenMagical;
+import com.genraven1.raven_magical.item.gemstone.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
