@@ -36,7 +36,7 @@ public class RawCitrine extends RawGemstoneItem {
 
     public void getRefinementRecipe(final Consumer<FinishedRecipe> finishedRecipe) {
         UpgradeRecipeBuilder.smithing(Ingredient.of(ModItems.RAW_CITRINE.get()), Ingredient.of(Items.NETHERITE_INGOT), ModItems.CITRINE.get())
-                .unlocks(RavenUtils.HAS_PREFIX, RavenUtils.has(ModItems.RAW_CITRINE.get()))
+                .unlocks(RavenUtils.HAS_PREFIX + CODE_NAME, RavenUtils.has(ModItems.RAW_CITRINE.get()))
                 .save(finishedRecipe,  CODE_NAME + RavenUtils.SMITHING_SUFFIX);
     }
 
