@@ -29,11 +29,11 @@ public class ModItems {
         return Arrays.stream(itemLists).flatMap(Collection::stream).collect(Collectors.toList());
     }
 
-    public static List<RavenItem> getGeneratedItems() {
-        return getItems(getRawGemstones(), CITRINE.stream().toList(), RUBY.stream().toList());
+    public static List<RawGemstoneItem> getRawGemstones() {
+        return List.of(RAW_CITRINE.get(), RAW_RUBY.get());
     }
 
-    public static List<RavenItem> getRawGemstones() {
-        return List.of(RAW_CITRINE.get(), RAW_RUBY.get());
+    public static List<RavenItem> getGemstones() {
+        return List.of(CITRINE.get(), RUBY.get());
     }
 }

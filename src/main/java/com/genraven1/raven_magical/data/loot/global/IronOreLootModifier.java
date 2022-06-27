@@ -1,7 +1,8 @@
-package com.genraven1.raven_magical.data.loot;
+package com.genraven1.raven_magical.data.loot.global;
 
 import com.genraven1.raven_magical.item.ModItems;
 import com.genraven1.raven_magical.item.RavenItem;
+import com.genraven1.raven_magical.item.RawGemstoneItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -23,11 +24,11 @@ import java.util.Objects;
 import java.util.Random;
 
 public class IronOreLootModifier extends LootModifier {
-    private final List<RavenItem> items;
+    private final List<RawGemstoneItem> items;
     public static final String NAME = "iron_ore_loot";
     public static final String GEMSTONE = "gemstone";
 
-    public IronOreLootModifier(final List<RavenItem> items) {
+    public IronOreLootModifier(final List<RawGemstoneItem> items) {
         super(new LootItemCondition[] {
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.IRON_ORE).build()
         });
@@ -55,9 +56,9 @@ public class IronOreLootModifier extends LootModifier {
 
         @Override
         public IronOreLootModifier read(final ResourceLocation location, final JsonObject object, final LootItemCondition[] lootConditions) {
-            final List<RavenItem> items = new ArrayList<>();
+            final List<RawGemstoneItem> items = new ArrayList<>();
             for (JsonElement name : object.getAsJsonArray(GEMSTONE)) {
-                items.add((RavenItem) ForgeRegistries.ITEMS.getValue(new ResourceLocation(name.getAsString())));
+                items.add((RawGemstoneItem) ForgeRegistries.ITEMS.getValue(new ResourceLocation(name.getAsString())));
             }
             return new IronOreLootModifier(items);
         }

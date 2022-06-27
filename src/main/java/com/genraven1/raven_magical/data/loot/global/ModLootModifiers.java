@@ -1,4 +1,4 @@
-package com.genraven1.raven_magical.data.loot;
+package com.genraven1.raven_magical.data.loot.global;
 
 import com.genraven1.raven_magical.RavenMagical;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;

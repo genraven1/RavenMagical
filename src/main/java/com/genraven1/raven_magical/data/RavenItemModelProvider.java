@@ -44,7 +44,8 @@ public class RavenItemModelProvider extends ItemModelProvider {
     }
 
     private void registerGeneratedItemModels() {
-        ModItems.getGeneratedItems().forEach(item -> generatedItemBuilder(item.getCodeName(), item.getCodePath()));
+        ModItems.getRawGemstones().forEach(item -> generatedItemBuilder(item.getCodeName(), item.getCodePath()));
+        ModItems.getGemstones().forEach(item -> generatedItemBuilder(item.getCodeName(), item.getCodePath()));
     }
 
     private void registerRavenMushroomBlock() {

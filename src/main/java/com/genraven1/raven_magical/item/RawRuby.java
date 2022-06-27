@@ -2,6 +2,10 @@ package com.genraven1.raven_magical.item;
 
 import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.item.Item;
+
+import java.util.function.Consumer;
 
 @NoArgsConstructor
 public class RawRuby extends RawGemstoneItem {
@@ -26,5 +30,10 @@ public class RawRuby extends RawGemstoneItem {
     @Override
     public String getCodePath() {
         return RavenUtils.ITEM_PATH + CODE_NAME;
+    }
+
+    @Override
+    public void getRefinementRecipe(final Consumer<FinishedRecipe> finishedRecipe) {
+
     }
 }
