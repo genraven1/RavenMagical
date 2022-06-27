@@ -5,7 +5,6 @@ import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Consumer;
@@ -36,7 +35,7 @@ public class RawCitrine extends RawGemstoneItem {
     }
 
     public void getRefinementRecipe(final Consumer<FinishedRecipe> finishedRecipe) {
-        UpgradeRecipeBuilder.smithing(Ingredient.of(ModItems.RAW_CITRINE.get()), Ingredient.of(Items.NETHERITE_INGOT), ModItems.CITRINE.get())
+        UpgradeRecipeBuilder.smithing(Ingredient.of(ModItems.RAW_CITRINE.get()), Ingredient.of(ModItems.EMERALD_KNIFE.get()), ModItems.CITRINE.get())
                 .unlocks(RavenUtils.HAS_PREFIX + CODE_NAME, RavenUtils.has(ModItems.RAW_CITRINE.get()))
                 .save(finishedRecipe,  CODE_NAME + RavenUtils.SMITHING_SUFFIX);
     }

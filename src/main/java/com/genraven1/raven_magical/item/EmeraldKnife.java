@@ -1,13 +1,10 @@
-package com.genraven1.raven_magical.item.gemstone;
+package com.genraven1.raven_magical.item;
 
 import com.genraven1.raven_magical.util.RavenUtils;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-public class Ruby extends GemstoneItem {
+public class EmeraldKnife extends RavenItem {
 
-    public static final String CODE_NAME = "ruby";
-
+    public static final String CODE_NAME = "emerald_knife";
     @Override
     public String getCodeName() {
         return CODE_NAME;
@@ -15,7 +12,7 @@ public class Ruby extends GemstoneItem {
 
     @Override
     public String getEnglishName() {
-        return "Ruby";
+        return "Emerald Knife";
     }
 
     @Override

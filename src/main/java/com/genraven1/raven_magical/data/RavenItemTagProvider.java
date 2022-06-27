@@ -4,7 +4,10 @@ import com.genraven1.raven_magical.RavenMagical;
 import com.genraven1.raven_magical.block.ModBlockTags;
 import com.genraven1.raven_magical.item.ModItemTags;
 import com.genraven1.raven_magical.item.ModItems;
+import com.genraven1.raven_magical.item.RavenItem;
 import com.genraven1.raven_magical.item.block.ModBlockItemTags;
+import com.genraven1.raven_magical.item.gemstone.GemstoneItem;
+import com.genraven1.raven_magical.item.gemstone.RawGemstoneItem;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -21,6 +24,8 @@ public class RavenItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags() {
         this.copy(ModBlockTags.MAGIC_MUSHROOM, ModBlockItemTags.MAGIC_MUSHROOM);
-        this.tag(ModItemTags.RAW_GEMSTONES).add(ModItems.getRawGemstones().toArray(new Item[0]));
+        this.tag(ModItemTags.RAW_GEMSTONES).add(ModItems.getRawGemstones().toArray(new RawGemstoneItem[0]));
+        this.tag(ModItemTags.GEMSTONES).add(ModItems.getGemstones().toArray(new GemstoneItem[0]));
+        this.tag(ModItemTags.KNIVES).add(ModItems.getKnives().toArray(new RavenItem[0]));
     }
 }
