@@ -18,5 +18,4 @@ public class RavenBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags() {
         this.tag(ModBlockTags.MAGIC_MUSHROOM).add(ModBlocks.getMushroomBlocks().toArray(new Block[0]));
-    }
 }

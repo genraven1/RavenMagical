@@ -89,12 +89,4 @@ public abstract class RavenMushroomBlock extends RavenBushBlock implements Bonem
         pLevel.removeBlock(pPos, false);
         pLevel.setBlock(pPos, pState, 3);
     }
-
-    public abstract String getCodeName();
-
-    public abstract String getEnglishName();
-
-    public abstract String getLanguageCodeName();
-
-    public abstract String getCodePath();
 }

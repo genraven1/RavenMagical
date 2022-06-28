@@ -24,7 +24,8 @@ public class RavenItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        registerItemModels();
+        generateItemModels();
+        generateBlockModels();
     }
 
     private ItemModelBuilder generatedItemBuilder(final String name, final String path) {
@@ -39,11 +40,6 @@ public class RavenItemModelProvider extends ItemModelProvider {
         generatedItemBuilder(name, path);
     }
 
-    private void registerItemModels() {
-        generateItemModels();
-        generateBlockModels();
-    }
-
     private void generateItemModels() {
         ModItems.getRawGemstones().forEach(item -> handheldItemBuilder(item.getCodeName(), item.getCodePath()));
         ModItems.getGemstones().forEach(item -> handheldItemBuilder(item.getCodeName(), item.getCodePath()));
@@ -51,5 +47,7 @@ public class RavenItemModelProvider extends ItemModelProvider {
 
     private void generateBlockModels() {
         ModBlocks.getMushroomBlocks().forEach(ravenMushroomBlock -> registerItemBlockModels(ravenMushroomBlock.getCodeName(), ravenMushroomBlock.getCodePath()));
+        ModBlocks.getMushroomPotBlocks().forEach(mushroomPot -> registerItemBlockModels(mushroomPot.getCodeName(), mushroomPot.getCodePath()));
+        ModBlocks.getMushroomPottedBlocks().forEach(pottedMushroom -> registerItemBlockModels(pottedMushroom.getCodeName(), pottedMushroom.getCodePath()));
     }
 }
