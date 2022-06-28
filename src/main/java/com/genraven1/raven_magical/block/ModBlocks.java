@@ -2,7 +2,8 @@ package com.genraven1.raven_magical.block;
 
 import com.genraven1.raven_magical.RavenMagical;
 import com.genraven1.raven_magical.item.ModItems;
-import com.genraven1.raven_magical.item.RavenBlockItem;
+import com.genraven1.raven_magical.item.block.RavenBlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

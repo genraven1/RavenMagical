@@ -1,12 +1,12 @@
-package com.genraven1.raven_magical.item;
+package com.genraven1.raven_magical.item.gemstone;
 
 import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class RawCitrine extends RawGemstoneItem {
+public class Citrine extends GemstoneItem {
 
-    public static final String CODE_NAME = "raw_citrine";
+    public static final String CODE_NAME = "citrine";
 
     @Override
     public String getCodeName() {
@@ -15,7 +15,7 @@ public class RawCitrine extends RawGemstoneItem {
 
     @Override
     public String getEnglishName() {
-        return "Raw Citrine";
+        return "Citrine";
     }
 
     @Override

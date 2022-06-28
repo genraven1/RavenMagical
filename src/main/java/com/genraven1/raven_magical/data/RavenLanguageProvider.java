@@ -9,6 +9,8 @@ import com.genraven1.raven_magical.item.RavenItem;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
+import java.util.List;
+
 public class RavenLanguageProvider extends LanguageProvider {
 
     public RavenLanguageProvider(final DataGenerator dataGenerator, final String locale) {
@@ -22,20 +24,13 @@ public class RavenLanguageProvider extends LanguageProvider {
     }
 
     private void addItemTranslations() {
-        for (RavenItem item : ModItems.getGeneratedItems()) {
-            add(item.getLanguageCodeName(), item.getEnglishName());
-        }
+        ModItems.getRawGemstones().forEach(item -> add(item.getLanguageCodeName(), item.getEnglishName()));
+        ModItems.getGemstones().forEach(item -> add(item.getLanguageCodeName(), item.getEnglishName()));
     }
 
     private void addBlockTranslations() {
-        for (RavenMushroomBlock ravenMushroomBlock : ModBlocks.getMushroomBlocks()) {
-            add(ravenMushroomBlock.getLanguageCodeName(), ravenMushroomBlock.getEnglishName());
-        }
-        for (BaseMushroomPot mushroomPot : ModBlocks.getMushroomPotBlocks()) {
-            add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName());
-        }
-        for (BaseMushroomPot mushroomPot : ModBlocks.getMushroomPottedBlocks()) {
-            add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName());
-        }
+        ModBlocks.getMushroomBlocks().forEach(ravenMushroomBlock -> add(ravenMushroomBlock.getLanguageCodeName(), ravenMushroomBlock.getEnglishName()));
+        ModBlocks.getMushroomPotBlocks().forEach(mushroomPot -> add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName()));
+        ModBlocks.getMushroomPottedBlocks().forEach(mushroomPot -> add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName()));
     }
 }

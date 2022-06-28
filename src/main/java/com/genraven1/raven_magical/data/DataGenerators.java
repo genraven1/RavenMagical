@@ -28,8 +28,8 @@ public class DataGenerators {
         final RavenBlockTagsProvider blockTags = new RavenBlockTagsProvider(dataGenerator, existingFileHelper);
         dataGenerator.addProvider(blockTags);
         dataGenerator.addProvider(new RavenItemTagProvider(dataGenerator, blockTags, existingFileHelper));
-//        dataGenerator.addProvider(new RecipeProviderRIC(dataGenerator));
-//        dataGenerator.addProvider(new LootTableProviderRIC(dataGenerator));
+        dataGenerator.addProvider(new RavenRecipeProvider(dataGenerator));
+        dataGenerator.addProvider(new RavenLootTableProvider(dataGenerator));
     }
 
     private static void addLanguageProviders(final DataGenerator dataGenerator) {

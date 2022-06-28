@@ -1,10 +1,10 @@
-package com.genraven1.raven_magical.item;
+package com.genraven1.raven_magical.item.gemstone;
 
 import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class Ruby extends RavenItem {
+public class Ruby extends GemstoneItem {
 
     public static final String CODE_NAME = "ruby";
 

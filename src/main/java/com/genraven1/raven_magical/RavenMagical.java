@@ -1,8 +1,9 @@
 package com.genraven1.raven_magical;
 
 import com.genraven1.raven_magical.block.ModBlocks;
-import com.genraven1.raven_magical.data.loot.ModLootModifiers;
+import com.genraven1.raven_magical.data.loot.global.ModLootModifiers;
 import com.genraven1.raven_magical.item.ModItems;
+import com.genraven1.raven_magical.recipes.ModRecipes;
 import com.genraven1.raven_magical.tileentity.ModTileEntities;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -28,12 +29,16 @@ public class RavenMagical
         final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
+        registerRegistries(eventBus);
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
+    private void registerRegistries(final IEventBus eventBus) {
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
         ModTileEntities.register(eventBus);
         ModLootModifiers.register(eventBus);
-        MinecraftForge.EVENT_BUS.register(this);
+        ModRecipes.register(eventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
