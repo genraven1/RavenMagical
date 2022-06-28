@@ -1,6 +1,8 @@
 package com.genraven1.vampire_raven.block;
 
+import com.genraven1.vampire_raven.util.RavenUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
@@ -16,6 +18,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Random;
 
 public abstract class RavenMushroomBlock extends RavenBushBlock implements BonemealableBlock {
+
+    public static final ResourceLocation RESOURCE_LOCATION = RavenUtils.getResourceLocation("magic_mushroom");
     protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 6.0D, 11.0D);
 
     public RavenMushroomBlock() {

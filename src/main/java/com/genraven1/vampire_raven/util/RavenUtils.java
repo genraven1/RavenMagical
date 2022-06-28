@@ -13,7 +13,7 @@ public class RavenUtils {
     public static final String HAS_PREFIX = "has_";
     public static final String SMITHING_SUFFIX = "_smithing";
 
-    public static ResourceLocation getRavenMagicalResourceLocation(final String name) {
+    public static ResourceLocation getResourceLocation(final String name) {
         return new ResourceLocation(VampireRaven.MOD_ID, name);
     }
 }

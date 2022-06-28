@@ -27,5 +27,6 @@ public class RavenLanguageProvider extends LanguageProvider {
         ModBlocks.getMushroomBlocks().forEach(ravenMushroomBlock -> add(ravenMushroomBlock.getLanguageCodeName(), ravenMushroomBlock.getEnglishName()));
         ModBlocks.getMushroomPotBlocks().forEach(mushroomPot -> add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName()));
         ModBlocks.getMushroomPottedBlocks().forEach(mushroomPot -> add(mushroomPot.getLanguageCodeName(), mushroomPot.getEnglishName()));
+        ModBlocks.getBloodPlants().forEach(bloodPlant -> add(bloodPlant.getLanguageCodeName(), bloodPlant.getEnglishName()));
     }
 }

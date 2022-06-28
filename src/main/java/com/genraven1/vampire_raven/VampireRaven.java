@@ -48,8 +48,9 @@ public class VampireRaven
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACK_MUSHROOM.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_BLACK_MUSHROOM.get(), RenderType.cutout());
+        ModBlocks.getMushroomBlocks().forEach(mushroom -> ItemBlockRenderTypes.setRenderLayer(mushroom, RenderType.cutout()));
+        ModBlocks.getMushroomPottedBlocks().forEach(mushroomPot -> ItemBlockRenderTypes.setRenderLayer(mushroomPot, RenderType.cutout()));
+        ModBlocks.getBloodPlants().forEach(bloodPlant -> ItemBlockRenderTypes.setRenderLayer(bloodPlant, RenderType.cutout()));
     }
 
     public static Logger getLOGGER() {

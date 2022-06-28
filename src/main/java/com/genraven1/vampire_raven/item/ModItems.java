@@ -3,6 +3,7 @@ package com.genraven1.vampire_raven.item;
 import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.item.gemstone.*;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

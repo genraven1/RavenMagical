@@ -21,6 +21,7 @@ public class RavenBlockStateProvider extends BlockStateProvider {
         registerMushroomBlockStates();
         registerMushroomPotBlockStates();
         registerPottedMushrooms();
+        registerBloodPlants();
     }
 
     private void registerMushroomBlockStates() {
@@ -33,6 +34,10 @@ public class RavenBlockStateProvider extends BlockStateProvider {
 
     private void registerPottedMushrooms() {
         ModBlocks.getMushroomPottedBlocks().forEach(pottedMushroom -> getVariantBuilder(pottedMushroom).partialState().addModels(createConfiguredPlantModel(pottedMushroom.getCodeName(), pottedMushroom.getCodePath())));
+    }
+
+    private void registerBloodPlants() {
+        ModBlocks.getBloodPlants().forEach(bloodPlant -> getVariantBuilder(bloodPlant).partialState().addModels(new ConfiguredModel((models().crop(bloodPlant.getCodeName(), modLoc(bloodPlant.getCodePath()))))));
     }
 
     private ConfiguredModel createConfiguredPlantModel(final String name, final String codePath) {

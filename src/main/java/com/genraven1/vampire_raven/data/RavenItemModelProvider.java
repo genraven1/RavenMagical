@@ -48,5 +48,6 @@ public class RavenItemModelProvider extends ItemModelProvider {
         ModBlocks.getMushroomBlocks().forEach(ravenMushroomBlock -> registerItemBlockModels(ravenMushroomBlock.getCodeName(), ravenMushroomBlock.getCodePath()));
         ModBlocks.getMushroomPotBlocks().forEach(mushroomPot -> registerItemBlockModels(mushroomPot.getCodeName(), mushroomPot.getCodePath()));
         ModBlocks.getMushroomPottedBlocks().forEach(pottedMushroom -> registerItemBlockModels(pottedMushroom.getCodeName(), pottedMushroom.getCodePath()));
+        ModBlocks.getBloodPlants().forEach(bloodPlant -> registerItemBlockModels(bloodPlant.getCodeName(), bloodPlant.getCodePath()));
     }
 }

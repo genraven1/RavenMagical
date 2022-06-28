@@ -11,5 +11,6 @@ public class ModBlockLootTables extends BlockLoot {
         ModBlocks.getMushroomBlocks().forEach(this::dropSelf);
         ModBlocks.getMushroomPotBlocks().forEach(this::dropSelf);
         ModBlocks.getMushroomPottedBlocks().forEach(this::dropSelf);
+        ModBlocks.getBloodPlants().forEach(this::dropSelf);
     }
 }

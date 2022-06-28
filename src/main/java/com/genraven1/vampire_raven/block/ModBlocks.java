@@ -1,6 +1,8 @@
 package com.genraven1.vampire_raven.block;
 
 import com.genraven1.vampire_raven.VampireRaven;
+import com.genraven1.vampire_raven.block.crop.BloodPlant;
+import com.genraven1.vampire_raven.block.crop.WeakBloodPlant;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.item.block.RavenBlockItem;
 import net.minecraft.world.level.block.Block;
@@ -21,6 +23,8 @@ public class ModBlocks {
     // Basic Mushroom Pots
     public static final RegistryObject<BaseMushroomPot> BASIC_MUSHROOM_POT = registerBlock(BasicEmptyMushroomPot.CODE_NAME, BasicEmptyMushroomPot::new);
     public static final RegistryObject<BaseMushroomPot> POTTED_BLACK_MUSHROOM = registerBlock(BasicBlackMushroomPot.CODE_NAME, BasicBlackMushroomPot::new);
+
+    public static final RegistryObject<BloodPlant> WEAK_BLOOD_PLANT = registerBlock(WeakBloodPlant.CODE_NAME, WeakBloodPlant::new);
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -46,5 +50,9 @@ public class ModBlocks {
 
     public static List<BaseMushroomPot> getMushroomPottedBlocks() {
         return List.of(POTTED_BLACK_MUSHROOM.get());
+    }
+
+    public static List<BloodPlant> getBloodPlants() {
+        return List.of(WEAK_BLOOD_PLANT.get());
     }
 }

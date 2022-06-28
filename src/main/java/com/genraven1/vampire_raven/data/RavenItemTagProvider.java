@@ -22,6 +22,7 @@ public class RavenItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags() {
         this.copy(ModBlockTags.MAGIC_MUSHROOM, ModBlockItemTags.MAGIC_MUSHROOM);
+        this.copy(ModBlockTags.BLOOD_PLANT, ModBlockItemTags.BLOOD_PLANT);
         this.tag(ModItemTags.RAW_GEMSTONES).add(ModItems.getRawGemstones().toArray(new RawGemstoneItem[0]));
         this.tag(ModItemTags.GEMSTONES).add(ModItems.getGemstones().toArray(new GemstoneItem[0]));
     }
