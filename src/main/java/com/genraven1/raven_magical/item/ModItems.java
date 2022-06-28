@@ -17,8 +17,6 @@ public class ModItems {
     public static final RegistryObject<RawGemstoneItem> RAW_RUBY = ITEMS.register(RawRuby.CODE_NAME, RawRuby::new);
     public static final RegistryObject<GemstoneItem> CITRINE = ITEMS.register(Citrine.CODE_NAME, Citrine::new);
     public static final RegistryObject<GemstoneItem> RUBY = ITEMS.register(Ruby.CODE_NAME, Ruby::new);
-    public static final RegistryObject<RavenItem> EMERALD_KNIFE = ITEMS.register(EmeraldKnife.CODE_NAME, EmeraldKnife::new);
-
     public static void register(final IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
@@ -29,9 +27,5 @@ public class ModItems {
 
     public static List<GemstoneItem> getGemstones() {
         return List.of(CITRINE.get(), RUBY.get());
-    }
-
-    public static List<RavenItem> getKnives() {
-        return List.of(EMERALD_KNIFE.get());
     }
 }

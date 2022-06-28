@@ -1,12 +1,7 @@
 package com.genraven1.raven_magical.util;
 
 import com.genraven1.raven_magical.RavenMagical;
-import net.minecraft.advancements.critereon.EntityPredicate;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.ItemLike;
 
 public class RavenUtils {
 
@@ -20,13 +15,5 @@ public class RavenUtils {
 
     public static ResourceLocation getRavenMagicalResourceLocation(final String name) {
         return new ResourceLocation(RavenMagical.MOD_ID, name);
-    }
-
-    private static InventoryChangeTrigger.TriggerInstance inventoryTrigger(final ItemPredicate... pPredicates) {
-        return new InventoryChangeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, pPredicates);
-    }
-
-    public static InventoryChangeTrigger.TriggerInstance has(final ItemLike pItemLike) {
-        return inventoryTrigger(ItemPredicate.Builder.item().of(pItemLike).build());
     }
 }

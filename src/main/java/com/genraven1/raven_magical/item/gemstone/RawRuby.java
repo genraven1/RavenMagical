@@ -3,8 +3,10 @@ package com.genraven1.raven_magical.item.gemstone;
 import com.genraven1.raven_magical.item.ModItems;
 import com.genraven1.raven_magical.util.RavenUtils;
 import lombok.NoArgsConstructor;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Consumer;
@@ -36,8 +38,8 @@ public class RawRuby extends RawGemstoneItem {
 
     @Override
     public void getRefinementRecipe(final Consumer<FinishedRecipe> finishedRecipe) {
-        UpgradeRecipeBuilder.smithing(Ingredient.of(ModItems.RAW_RUBY.get()), Ingredient.of(ModItems.EMERALD_KNIFE.get()), ModItems.RUBY.get())
-                .unlocks(RavenUtils.HAS_PREFIX + CODE_NAME, RavenUtils.has(ModItems.RAW_RUBY.get()))
+        UpgradeRecipeBuilder.smithing(Ingredient.of(ModItems.RAW_RUBY.get()), Ingredient.of(Items.STICK), ModItems.RUBY.get())
+                .unlocks(RavenUtils.HAS_PREFIX + CODE_NAME, InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_RUBY.get()))
                 .save(finishedRecipe,  CODE_NAME + RavenUtils.SMITHING_SUFFIX);
     }
 }

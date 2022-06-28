@@ -26,6 +26,5 @@ public class RavenItemTagProvider extends ItemTagsProvider {
         this.copy(ModBlockTags.MAGIC_MUSHROOM, ModBlockItemTags.MAGIC_MUSHROOM);
         this.tag(ModItemTags.RAW_GEMSTONES).add(ModItems.getRawGemstones().toArray(new RawGemstoneItem[0]));
         this.tag(ModItemTags.GEMSTONES).add(ModItems.getGemstones().toArray(new GemstoneItem[0]));
-        this.tag(ModItemTags.KNIVES).add(ModItems.getKnives().toArray(new RavenItem[0]));
     }
 }
