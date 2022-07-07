@@ -1,6 +1,12 @@
 package com.genraven1.vampire_raven.data;
 
 import com.genraven1.vampire_raven.VampireRaven;
+import com.genraven1.vampire_raven.data.loot.global.RavenGlobalLootModifierProvider;
+import com.genraven1.vampire_raven.data.loot.tables.RavenLootTableProvider;
+import com.genraven1.vampire_raven.data.model.RavenBlockStateProvider;
+import com.genraven1.vampire_raven.data.model.RavenItemModelProvider;
+import com.genraven1.vampire_raven.data.tag.RavenBlockTagsProvider;
+import com.genraven1.vampire_raven.data.tag.RavenItemTagProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

@@ -1,6 +1,8 @@
 package com.genraven1.vampire_raven.item;
 
 import com.genraven1.vampire_raven.VampireRaven;
+import com.genraven1.vampire_raven.block.crop.WeakBloodSeed;
+import com.genraven1.vampire_raven.item.block.SeedRavenBlockItem;
 import com.genraven1.vampire_raven.item.gemstone.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -18,6 +20,8 @@ public class ModItems {
     public static final RegistryObject<RawGemstoneItem> RAW_RUBY = ITEMS.register(RawRuby.CODE_NAME, RawRuby::new);
     public static final RegistryObject<GemstoneItem> CITRINE = ITEMS.register(Citrine.CODE_NAME, Citrine::new);
     public static final RegistryObject<GemstoneItem> RUBY = ITEMS.register(Ruby.CODE_NAME, Ruby::new);
+    public static final RegistryObject<SeedRavenBlockItem> WEAK_BLOOD_SEED = ITEMS.register(WeakBloodSeed.CODE_NAME, WeakBloodSeed::new);
+
     public static void register(final IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
@@ -28,5 +32,9 @@ public class ModItems {
 
     public static List<GemstoneItem> getGemstones() {
         return List.of(CITRINE.get(), RUBY.get());
+    }
+
+    public static List<SeedRavenBlockItem> getBloodSeeds() {
+        return List.of(WEAK_BLOOD_SEED.get());
     }
 }

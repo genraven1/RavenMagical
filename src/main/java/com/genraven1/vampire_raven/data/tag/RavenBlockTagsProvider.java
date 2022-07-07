@@ -1,4 +1,4 @@
-package com.genraven1.vampire_raven.data;
+package com.genraven1.vampire_raven.data.tag;
 
 import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.block.ModBlockTags;

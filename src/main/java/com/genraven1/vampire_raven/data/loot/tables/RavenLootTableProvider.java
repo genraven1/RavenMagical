@@ -1,4 +1,4 @@
-package com.genraven1.vampire_raven.data;
+package com.genraven1.vampire_raven.data.loot.tables;
 
 import com.genraven1.vampire_raven.data.loot.tables.ModBlockLootTables;
 import com.google.common.collect.ImmutableList;
