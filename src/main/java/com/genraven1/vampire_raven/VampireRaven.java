@@ -2,6 +2,7 @@ package com.genraven1.vampire_raven;
 
 import com.genraven1.vampire_raven.block.ModBlocks;
 import com.genraven1.vampire_raven.data.loot.global.ModLootModifiers;
+import com.genraven1.vampire_raven.fluid.ModFluids;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.recipes.ModRecipes;
 import com.genraven1.vampire_raven.tileentity.ModTileEntities;
@@ -36,6 +37,7 @@ public class VampireRaven
     private void registerRegistries(final IEventBus eventBus) {
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModFluids.register(eventBus);
         ModTileEntities.register(eventBus);
         ModLootModifiers.register(eventBus);
         ModRecipes.register(eventBus);
@@ -51,6 +53,11 @@ public class VampireRaven
         ModBlocks.getMushroomBlocks().forEach(mushroom -> ItemBlockRenderTypes.setRenderLayer(mushroom, RenderType.cutout()));
         ModBlocks.getMushroomPottedBlocks().forEach(mushroomPot -> ItemBlockRenderTypes.setRenderLayer(mushroomPot, RenderType.cutout()));
         ModBlocks.getBloodPlants().forEach(bloodPlant -> ItemBlockRenderTypes.setRenderLayer(bloodPlant, RenderType.cutout()));
+        clientFluidSetup();
+    }
+
+    private void clientFluidSetup() {
+
     }
 
     public static Logger getLOGGER() {
