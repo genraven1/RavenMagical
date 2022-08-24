@@ -12,20 +12,28 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModFluids {
 
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, VampireRaven.MOD_ID);
 
+    public static final RegistryObject<RavenBlood> WEAK_BLOOD = registerFluid(WeakBlood.CODE_NAME, WeakBlood::new);
+
+    public static final RegistryObject<RavenBlood> FLOWING_WEAK_BLOOD = registerFluid(WeakBlood.CODE_NAME, WeakBlood::new);
+
     private static <T extends Fluid> RegistryObject<T> registerFluid(final String name, final Supplier<T> fluid) {
         RegistryObject<T> toReturn = FLUIDS.register(name, fluid);
-        ModItems.ITEMS.register(name, () -> new RavenBucketItem(fluid.get()));
         ModBlocks.BLOCKS.register(name, () -> new RavenLiquidBlock((FlowingFluid) fluid.get()));
         return toReturn;
     }
 
     public static void register(final IEventBus eventBus) {
         FLUIDS.register(eventBus);
+    }
+
+    public static List<RavenBlood> getBlood() {
+        return List.of(WEAK_BLOOD.get());
     }
 }
