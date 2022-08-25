@@ -12,14 +12,14 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class WeakBlood extends RavenBlood {
+public abstract class PoorBlood extends RavenBlood {
 
-    public static final String CODE_NAME = "weak_blood";
+    public static final String CODE_NAME = "poor_blood";
     public static final String BLOCK_CODE_NAME = CODE_NAME + RavenUtils.BLOCK_SUFFIX;
     public static final String FLOWING_CODE_NAME = CODE_NAME + RavenUtils.FLOWING_SUFFIX;
     public static final String BUCKET_CODE_NAME = CODE_NAME + RavenUtils.BUCKET_SUFFIX;
 
-    protected WeakBlood() {
+    protected PoorBlood() {
         super(FluidUtils.createFluidProperties(ModFluids.WEAK_BLOOD, ModFluids.FLOWING_WEAK_BLOOD, 0xbffbfbf, ModBlocks.WEAK_BLOOD_BLOCK, ModItems.WEAK_BLOOD_BUCKET));
     }
 
@@ -38,7 +38,7 @@ public abstract class WeakBlood extends RavenBlood {
         return ModItems.WEAK_BLOOD_BUCKET.get();
     }
 
-    public static class Source extends WeakBlood {
+    public static class Source extends PoorBlood {
 
         @Override
         public String getCodeName() {
@@ -54,7 +54,7 @@ public abstract class WeakBlood extends RavenBlood {
         }
     }
 
-    public static class Flowing extends WeakBlood {
+    public static class Flowing extends PoorBlood {
 
         @Override
         public String getCodeName() {

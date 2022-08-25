@@ -1,7 +1,7 @@
 package com.genraven1.vampire_raven.item;
 
 import com.genraven1.vampire_raven.VampireRaven;
-import com.genraven1.vampire_raven.fluid.WeakBlood;
+import com.genraven1.vampire_raven.fluid.PoorBlood;
 import com.genraven1.vampire_raven.item.gemstone.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,7 +22,7 @@ public class ModItems {
     public static final RegistryObject<GemstoneItem> CITRINE = ITEMS.register(Citrine.CODE_NAME, Citrine::new);
     public static final RegistryObject<GemstoneItem> RUBY = ITEMS.register(Ruby.CODE_NAME, Ruby::new);
 
-    public static final RegistryObject<RavenBucketItem> WEAK_BLOOD_BUCKET = ITEMS.register(WeakBlood.BUCKET_CODE_NAME, WeakBlood.Bucket::new);
+    public static final RegistryObject<RavenBucketItem> WEAK_BLOOD_BUCKET = ITEMS.register(PoorBlood.BUCKET_CODE_NAME, PoorBlood.Bucket::new);
     public static void register(final IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

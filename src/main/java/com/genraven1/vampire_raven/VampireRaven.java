@@ -36,9 +36,9 @@ public class VampireRaven
     }
 
     private void registerRegistries(final IEventBus eventBus) {
+        ModFluids.register(eventBus);
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
-        ModFluids.register(eventBus);
         ModTileEntities.register(eventBus);
         ModLootModifiers.register(eventBus);
         ModRecipes.register(eventBus);
