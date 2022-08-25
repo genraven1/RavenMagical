@@ -5,7 +5,7 @@ import com.genraven1.vampire_raven.block.ModBlockTags;
 import com.genraven1.vampire_raven.item.ModItemTags;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.item.block.ModBlockItemTags;
-import com.genraven1.vampire_raven.item.fluid.RavenBucketItem;
+import com.genraven1.vampire_raven.item.RavenBucketItem;
 import com.genraven1.vampire_raven.item.gemstone.GemstoneItem;
 import com.genraven1.vampire_raven.item.gemstone.RawGemstoneItem;
 import net.minecraft.data.DataGenerator;
@@ -26,6 +26,6 @@ public class RavenItemTagProvider extends ItemTagsProvider {
         this.copy(ModBlockTags.BLOOD_PLANT, ModBlockItemTags.BLOOD_PLANT);
         this.tag(ModItemTags.RAW_GEMSTONES).add(ModItems.getRawGemstones().toArray(new RawGemstoneItem[0]));
         this.tag(ModItemTags.GEMSTONES).add(ModItems.getGemstones().toArray(new GemstoneItem[0]));
-        this.tag(ModItemTags.BLOOD_BUCKETS).add(ModItems.getBucketItems().toArray(new RavenBucketItem[0]));
+        this.tag(ModItemTags.BLOOD_BUCKETS).add(ModItems.getBloodBucketItems().toArray(new RavenBucketItem[0]));
     }
 }

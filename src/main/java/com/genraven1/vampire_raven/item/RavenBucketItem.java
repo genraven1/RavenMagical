@@ -1,4 +1,4 @@
-package com.genraven1.vampire_raven.item.fluid;
+package com.genraven1.vampire_raven.item;
 
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;

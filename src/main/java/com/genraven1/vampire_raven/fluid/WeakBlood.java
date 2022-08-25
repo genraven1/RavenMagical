@@ -1,6 +1,8 @@
 package com.genraven1.vampire_raven.fluid;
 
+import com.genraven1.vampire_raven.block.fluid.RavenLiquidBlock;
 import com.genraven1.vampire_raven.item.ModItems;
+import com.genraven1.vampire_raven.item.RavenBucketItem;
 import com.genraven1.vampire_raven.util.RavenUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -11,7 +13,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -25,7 +26,10 @@ import javax.annotation.Nullable;
 public abstract class WeakBlood extends RavenBlood {
 
     public static final String CODE_NAME = "weak_blood";
+
+    public static final String BLOCK_CODE_NAME = "weak_blood_bucket";
     public static final String FLOWING_CODE_NAME = CODE_NAME + RavenUtils.FLOWING_SUFFIX;
+    public static final String BUCKET_CODE_NAME = CODE_NAME + RavenUtils.BUCKET_SUFFIX;
 
     @Override
     public @NotNull Fluid getFlowing() {
@@ -120,6 +124,39 @@ public abstract class WeakBlood extends RavenBlood {
 
         public boolean isSource(final @NotNull FluidState state) {
             return false;
+        }
+    }
+
+    public static class Bucket extends RavenBucketItem {
+
+        public Bucket() {
+            super(ModFluids.WEAK_BLOOD.get());
+        }
+
+        @Override
+        public String getCodeName() {
+            return BUCKET_CODE_NAME;
+        }
+
+        @Override
+        public String getEnglishName() {
+            return "Weak Blood Bucket";
+        }
+
+        @Override
+        public String getLanguageCodeName() {
+            return RavenUtils.LANG_ITEM + BUCKET_CODE_NAME;
+        }
+
+        @Override
+        public String getCodePath() {
+            return RavenUtils.ITEM_PATH + BUCKET_CODE_NAME;
+        }
+    }
+
+    public static class Block extends RavenLiquidBlock {
+        public Block() {
+            super(ModFluids.WEAK_BLOOD.get());
         }
     }
 }

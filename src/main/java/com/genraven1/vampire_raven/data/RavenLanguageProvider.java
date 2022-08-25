@@ -21,7 +21,7 @@ public class RavenLanguageProvider extends LanguageProvider {
     private void addItemTranslations() {
         ModItems.getRawGemstones().forEach(item -> add(item.getLanguageCodeName(), item.getEnglishName()));
         ModItems.getGemstones().forEach(item -> add(item.getLanguageCodeName(), item.getEnglishName()));
-        ModItems.getBucketItems().forEach(item -> add(item.getLanguageCodeName(), item.getEnglishName()));
+        ModItems.getBloodBucketItems().forEach(item -> add(item.getLanguageCodeName(), item.getEnglishName()));
     }
 
     private void addBlockTranslations() {

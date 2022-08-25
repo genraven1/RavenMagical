@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModFluids {
@@ -22,11 +23,14 @@ public class ModFluids {
 
     private static <T extends Fluid> RegistryObject<T> registerFluid(final String name, final Supplier<T> fluid) {
         RegistryObject<T> toReturn = FLUIDS.register(name, fluid);
-        ModBlocks.BLOCKS.register(name, () -> new RavenLiquidBlock((FlowingFluid) fluid.get()));
         return toReturn;
     }
 
     public static void register(final IEventBus eventBus) {
         FLUIDS.register(eventBus);
+    }
+
+    public static List<RavenBlood> getBloodFluids() {
+        return List.of(WEAK_BLOOD.get(), FLOWING_WEAK_BLOOD.get());
     }
 }

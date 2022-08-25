@@ -3,9 +3,13 @@ package com.genraven1.vampire_raven.block;
 import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.block.crop.BloodPlant;
 import com.genraven1.vampire_raven.block.crop.WeakBloodPlant;
+import com.genraven1.vampire_raven.block.fluid.RavenLiquidBlock;
+import com.genraven1.vampire_raven.fluid.WeakBlood;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.item.block.RavenBlockItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,6 +29,8 @@ public class ModBlocks {
     public static final RegistryObject<BaseMushroomPot> POTTED_BLACK_MUSHROOM = registerBlock(BasicBlackMushroomPot.CODE_NAME, BasicBlackMushroomPot::new);
 
     public static final RegistryObject<BloodPlant> WEAK_BLOOD_PLANT = registerBlock(WeakBloodPlant.CODE_NAME, WeakBloodPlant::new);
+
+    public static final RegistryObject<RavenLiquidBlock> WEAK_BLOOD_BLOCK = registerBlock(WeakBlood.BLOCK_CODE_NAME, WeakBlood.Block::new);
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -54,5 +60,9 @@ public class ModBlocks {
 
     public static List<BloodPlant> getBloodPlants() {
         return List.of(WEAK_BLOOD_PLANT.get());
+    }
+
+    public static List<LiquidBlock> getBloodBlocks() {
+        return List.of(WEAK_BLOOD_BLOCK.get());
     }
 }
