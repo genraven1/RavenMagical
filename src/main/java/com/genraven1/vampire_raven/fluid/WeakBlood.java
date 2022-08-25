@@ -1,35 +1,27 @@
 package com.genraven1.vampire_raven.fluid;
 
+import com.genraven1.vampire_raven.block.ModBlocks;
 import com.genraven1.vampire_raven.block.fluid.RavenLiquidBlock;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.item.RavenBucketItem;
+import com.genraven1.vampire_raven.util.FluidUtils;
 import com.genraven1.vampire_raven.util.RavenUtils;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
-
 public abstract class WeakBlood extends RavenBlood {
 
     public static final String CODE_NAME = "weak_blood";
-
-    public static final String BLOCK_CODE_NAME = "weak_blood_bucket";
+    public static final String BLOCK_CODE_NAME = CODE_NAME + RavenUtils.BLOCK_SUFFIX;
     public static final String FLOWING_CODE_NAME = CODE_NAME + RavenUtils.FLOWING_SUFFIX;
     public static final String BUCKET_CODE_NAME = CODE_NAME + RavenUtils.BUCKET_SUFFIX;
+
+    protected WeakBlood() {
+        super(FluidUtils.createFluidProperties(ModFluids.WEAK_BLOOD, ModFluids.FLOWING_WEAK_BLOOD, 0xbffbfbf, ModBlocks.WEAK_BLOOD_BLOCK, ModItems.WEAK_BLOOD_BUCKET));
+    }
 
     @Override
     public @NotNull Fluid getFlowing() {
@@ -39,50 +31,6 @@ public abstract class WeakBlood extends RavenBlood {
     @Override
     public @NotNull Fluid getSource() {
         return ModFluids.WEAK_BLOOD.get();
-    }
-
-    @Override
-    protected boolean canConvertToSource() {
-        return true;
-    }
-
-    @Nullable
-    public ParticleOptions getDripParticle() {
-        return ParticleTypes.DRIPPING_WATER;
-    }
-
-    @Override
-    protected boolean canBeReplacedWith(final @NotNull FluidState state, final @NotNull BlockGetter getter, final @NotNull BlockPos pos, final @NotNull Fluid fluid, final @NotNull Direction direction) {
-        return direction == Direction.DOWN && !fluid.is(FluidTags.WATER);
-    }
-
-    @Override
-    public int getTickDelay(final @NotNull LevelReader level) {
-        return 5;
-    }
-
-    @Override
-    protected float getExplosionResistance() {
-        return 100.0F;
-    }
-
-    @Override
-    protected @NotNull BlockState createLegacyBlock(final @NotNull FluidState state) {
-        return Blocks.WATER.defaultBlockState().setValue(LiquidBlock.LEVEL, getLegacyLevel(state));
-    }
-
-    @Override
-    protected void beforeDestroyingBlock(final @NotNull LevelAccessor level, final @NotNull BlockPos pos, final @NotNull BlockState state) {
-        Block.dropResources(state, level, pos, state.hasBlockEntity() ? level.getBlockEntity(pos) : null);
-    }
-
-    public int getSlopeFindDistance(final @NotNull LevelReader level) {
-        return 4;
-    }
-
-    @Override
-    protected int getDropOff(final @NotNull LevelReader level) {
-        return 1;
     }
 
     @Override
