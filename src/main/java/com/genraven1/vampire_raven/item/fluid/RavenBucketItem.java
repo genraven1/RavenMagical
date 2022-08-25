@@ -15,4 +15,6 @@ public abstract class RavenBucketItem extends BucketItem {
     public abstract String getEnglishName();
 
     public abstract String getLanguageCodeName();
+
+    public abstract String getCodePath();
 }

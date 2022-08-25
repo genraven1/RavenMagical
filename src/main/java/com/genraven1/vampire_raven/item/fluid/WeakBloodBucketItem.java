@@ -24,6 +24,11 @@ public class WeakBloodBucketItem extends RavenBucketItem {
 
     @Override
     public String getLanguageCodeName() {
-        return null;
+        return RavenUtils.LANG_ITEM + CODE_NAME;
+    }
+
+    @Override
+    public String getCodePath() {
+        return RavenUtils.ITEM_PATH + CODE_NAME;
     }
 }

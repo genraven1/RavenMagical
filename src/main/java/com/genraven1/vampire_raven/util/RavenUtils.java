@@ -12,8 +12,8 @@ public class RavenUtils {
     public static final String ITEM_PATH = "item/";
     public static final String HAS_PREFIX = "has_";
     public static final String SMITHING_SUFFIX = "_smithing";
-
     public static final String BUCKET_SUFFIX = "_bucket";
+    public static final String FLOWING_SUFFIX = "_flowing";
 
     public static ResourceLocation getResourceLocation(final String name) {
         return new ResourceLocation(VampireRaven.MOD_ID, name);
