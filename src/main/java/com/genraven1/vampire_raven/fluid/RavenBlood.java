@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 public abstract class RavenBlood extends RavenFlowingFluid {
 
-    protected RavenBlood(Properties properties) {
+    protected RavenBlood(final Properties properties) {
         super(properties);
     }
     @Override

@@ -9,4 +9,13 @@ public abstract class RavenFlowingFluid extends ForgeFlowingFluid {
     }
 
     public abstract String getCodeName();
+
+    public static abstract class Source extends ForgeFlowingFluid.Source {
+
+        public Source(final Properties properties) {
+            super(properties);
+        }
+
+        public abstract String getCodeName();
+    }
 }

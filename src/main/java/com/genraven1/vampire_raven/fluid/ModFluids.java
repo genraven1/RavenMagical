@@ -13,7 +13,7 @@ public class ModFluids {
 
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, VampireRaven.MOD_ID);
 
-    public static final RegistryObject<RavenBlood> WEAK_BLOOD = FLUIDS.register(PoorBlood.CODE_NAME, PoorBlood.Source::new);
+    public static final RegistryObject<RavenFlowingFluid.Source> SOURCE_WEAK_BLOOD = FLUIDS.register(PoorBlood.SOURCE_CODE_NAME, PoorBlood.Source::new);
 
     public static final RegistryObject<RavenBlood> FLOWING_WEAK_BLOOD = FLUIDS.register(PoorBlood.FLOWING_CODE_NAME, PoorBlood.Flowing::new);
 
@@ -21,7 +21,11 @@ public class ModFluids {
         FLUIDS.register(eventBus);
     }
 
-    public static List<RavenBlood> getBloodFluids() {
-        return List.of(WEAK_BLOOD.get(), FLOWING_WEAK_BLOOD.get());
+    public static List<RavenFlowingFluid.Source> getSourceBloodFluids() {
+        return List.of(SOURCE_WEAK_BLOOD.get());
+    }
+
+    public static List<RavenBlood> getFlowingBloodFluids() {
+        return List.of(FLOWING_WEAK_BLOOD.get());
     }
 }

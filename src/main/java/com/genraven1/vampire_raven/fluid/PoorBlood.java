@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class PoorBlood extends RavenBlood {
@@ -19,8 +20,12 @@ public abstract class PoorBlood extends RavenBlood {
     public static final String FLOWING_CODE_NAME = CODE_NAME + RavenUtils.FLOWING_SUFFIX;
     public static final String BUCKET_CODE_NAME = CODE_NAME + RavenUtils.BUCKET_SUFFIX;
 
+    public static final String SOURCE_CODE_NAME = CODE_NAME + "_source";
+
+    public static final ForgeFlowingFluid.Properties BLOOD_PROPERTIES = FluidUtils.createFluidProperties(ModFluids.SOURCE_WEAK_BLOOD, ModFluids.FLOWING_WEAK_BLOOD, 0xbffbfbf, ModBlocks.WEAK_BLOOD_BLOCK, ModItems.WEAK_BLOOD_BUCKET);
+
     protected PoorBlood() {
-        super(FluidUtils.createFluidProperties(ModFluids.WEAK_BLOOD, ModFluids.FLOWING_WEAK_BLOOD, 0xbffbfbf, ModBlocks.WEAK_BLOOD_BLOCK, ModItems.WEAK_BLOOD_BUCKET));
+        super(BLOOD_PROPERTIES);
     }
 
     @Override
@@ -30,7 +35,7 @@ public abstract class PoorBlood extends RavenBlood {
 
     @Override
     public @NotNull Fluid getSource() {
-        return ModFluids.WEAK_BLOOD.get();
+        return ModFluids.SOURCE_WEAK_BLOOD.get();
     }
 
     @Override
@@ -38,11 +43,15 @@ public abstract class PoorBlood extends RavenBlood {
         return ModItems.WEAK_BLOOD_BUCKET.get();
     }
 
-    public static class Source extends PoorBlood {
+    public static class Source extends RavenFlowingFluid.Source {
+
+        public Source() {
+            super(BLOOD_PROPERTIES);
+        }
 
         @Override
         public String getCodeName() {
-            return CODE_NAME;
+            return SOURCE_CODE_NAME;
         }
 
         public int getAmount(final @NotNull FluidState state) {
@@ -78,7 +87,7 @@ public abstract class PoorBlood extends RavenBlood {
     public static class Bucket extends RavenBucketItem {
 
         public Bucket() {
-            super(ModFluids.WEAK_BLOOD.get());
+            super(ModFluids.SOURCE_WEAK_BLOOD.get());
         }
 
         @Override
@@ -104,7 +113,7 @@ public abstract class PoorBlood extends RavenBlood {
 
     public static class Block extends RavenLiquidBlock {
         public Block() {
-            super(ModFluids.WEAK_BLOOD.get());
+            super(ModFluids.SOURCE_WEAK_BLOOD.get());
         }
     }
 }
