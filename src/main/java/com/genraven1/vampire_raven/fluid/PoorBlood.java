@@ -1,7 +1,5 @@
 package com.genraven1.vampire_raven.fluid;
 
-import com.genraven1.vampire_raven.block.ModBlocks;
-import com.genraven1.vampire_raven.block.fluid.RavenLiquidBlock;
 import com.genraven1.vampire_raven.item.ModItems;
 import com.genraven1.vampire_raven.item.RavenBucketItem;
 import com.genraven1.vampire_raven.util.FluidUtils;
@@ -22,7 +20,7 @@ public abstract class PoorBlood extends RavenBlood {
 
     public static final String SOURCE_CODE_NAME = CODE_NAME + "_source";
 
-    public static final ForgeFlowingFluid.Properties BLOOD_PROPERTIES = FluidUtils.createFluidProperties(ModFluids.SOURCE_WEAK_BLOOD, ModFluids.FLOWING_WEAK_BLOOD, 0xbffbfbf, ModBlocks.WEAK_BLOOD_BLOCK, ModItems.WEAK_BLOOD_BUCKET);
+    public static final ForgeFlowingFluid.Properties BLOOD_PROPERTIES = FluidUtils.createFluidProperties(ModFluids.SOURCE_WEAK_BLOOD, ModFluids.FLOWING_WEAK_BLOOD, 0xbffbfbf, ModItems.WEAK_BLOOD_BUCKET);
 
     protected PoorBlood() {
         super(BLOOD_PROPERTIES);
@@ -108,12 +106,6 @@ public abstract class PoorBlood extends RavenBlood {
         @Override
         public String getCodePath() {
             return RavenUtils.ITEM_PATH + BUCKET_CODE_NAME;
-        }
-    }
-
-    public static class Block extends RavenLiquidBlock {
-        public Block() {
-            super(ModFluids.SOURCE_WEAK_BLOOD.get());
         }
     }
 }

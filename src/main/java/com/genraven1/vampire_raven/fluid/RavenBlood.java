@@ -54,7 +54,7 @@ public abstract class RavenBlood extends RavenFlowingFluid {
 
     @Override
     protected void beforeDestroyingBlock(final @NotNull LevelAccessor level, final @NotNull BlockPos pos, final @NotNull BlockState state) {
-        PoorBlood.Block.dropResources(state, level, pos, state.hasBlockEntity() ? level.getBlockEntity(pos) : null);
+
     }
 
     public int getSlopeFindDistance(final @NotNull LevelReader level) {

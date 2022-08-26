@@ -1,6 +1,9 @@
 package com.genraven1.vampire_raven.fluid;
 
 import com.genraven1.vampire_raven.VampireRaven;
+import com.genraven1.vampire_raven.block.ModBlocks;
+import com.genraven1.vampire_raven.block.fluid.RavenLiquidBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,6 +20,8 @@ public class ModFluids {
 
     public static final RegistryObject<RavenBlood> FLOWING_WEAK_BLOOD = FLUIDS.register(PoorBlood.FLOWING_CODE_NAME, PoorBlood.Flowing::new);
 
+//    public static final RegistryObject<RavenLiquidBlock> WEAK_BLOOD_BLOCK = ModBlocks.BLOCKS.register(PoorBlood.BLOCK_CODE_NAME, PoorBlood.Block::new);
+
     public static void register(final IEventBus eventBus) {
         FLUIDS.register(eventBus);
     }
@@ -28,4 +33,8 @@ public class ModFluids {
     public static List<RavenBlood> getFlowingBloodFluids() {
         return List.of(FLOWING_WEAK_BLOOD.get());
     }
+
+//    public static List<LiquidBlock> getBloodBlocks() {
+//        return List.of(WEAK_BLOOD_BLOCK.get());
+//    }
 }

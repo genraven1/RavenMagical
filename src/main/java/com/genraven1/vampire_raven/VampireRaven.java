@@ -57,7 +57,7 @@ public class VampireRaven
     }
 
     private void clientFluidSetup() {
-        ModBlocks.getBloodBlocks().forEach(block -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.translucent()));
+        //ModFluids.getBloodBlocks().forEach(block -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.translucent()));
         ModFluids.getSourceBloodFluids().forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.translucent()));
         ModFluids.getFlowingBloodFluids().forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.translucent()));
     }
