@@ -3,6 +3,7 @@ package com.genraven1.vampire_raven.data;
 import com.genraven1.vampire_raven.VampireRaven;
 import com.genraven1.vampire_raven.block.ModBlocks;
 import com.genraven1.vampire_raven.item.ModItems;
+import com.genraven1.vampire_raven.item.VampireRavenCreativeTab;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -16,6 +17,7 @@ public class RavenLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         addItemTranslations();
         addBlockTranslations();
+        add(VampireRavenCreativeTab.TabName, VampireRavenCreativeTab.EnglishTabName);
     }
 
     private void addItemTranslations() {
