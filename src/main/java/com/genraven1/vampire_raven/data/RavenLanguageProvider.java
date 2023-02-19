@@ -17,7 +17,7 @@ public class RavenLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         addItemTranslations();
         addBlockTranslations();
-        add(VampireRavenCreativeTab.TabName, VampireRavenCreativeTab.EnglishTabName);
+        add("itemGroup." + VampireRavenCreativeTab.TabName, VampireRavenCreativeTab.EnglishTabName);
     }
 
     private void addItemTranslations() {
